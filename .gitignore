@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Claude Code sessions (临时会话文件)
+.claude/sessions/
+.claudian/sessions/
+
+# Obsidian workspace (工作区状态，每人不同)
+.obsidian/workspace.json
+
+# 编译产物和依赖
+node_modules/
+dist/
+build/
+
+# 日志和临时文件
+*.log
+*.tmp
+.cache/
