@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "PUA Skill 完整图谱 - 11 Skills 底层逻辑与使用场景"
             }
+          },
+          {
+            "id": "64112e398d9f9537",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "好用skills/crawl.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "crawl"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,8 +186,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -181,8 +196,8 @@
             "state": {
               "type": "claudian-view",
               "state": {},
-              "icon": "bot",
-              "title": "Claudian"
+              "icon": "lucide-ghost",
+              "title": "claudian-view"
             }
           }
         ],
@@ -194,7 +209,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian42-brat:BRAT": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -203,19 +217,25 @@
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
       "claudian:Open Claudian": false,
+      "obsidian42-brat:BRAT": false,
       "terminal:Open terminal": false
     }
   },
-  "active": "619ef96f29f16084",
+  "active": "64112e398d9f9537",
   "lastOpenFiles": [
-    "temporal工作流/Activity幂等性实践指南.md",
+    "company-work/optimal-dataq-backend-架构分析.md",
+    "company-work/omm-setup-源码分析报告.md",
+    "company-work",
+    "未命名文件夹",
+    "optimal-dataq-backend-架构分析.md",
+    "omm-setup-源码分析报告.md",
     "好用skills/PUA Skill 完整图谱 - 11 Skills 底层逻辑与使用场景.md",
+    "temporal工作流/Activity幂等性实践指南.md",
     "好用skills/crawl.md",
     "temporal工作流/Temporal工作流框架完整指南.md",
     "好用skills",
     "随性记/2026-03-23.md",
     "temporal工作流",
-    "未命名文件夹",
     "python/打包成pip.md",
     "第一章 绪论_修改版.md",
     "python/Clash Cli探索_obsidian.md",
