@@ -1,0 +1,19 @@
+{
+  "id": "conv-1774258489303-xyn11u6wp",
+  "title": "Explain assistant capabilities",
+  "titleGenerationStatus": "success",
+  "createdAt": 1774258489304,
+  "updatedAt": 1774260611115,
+  "lastResponseAt": 1774260611115,
+  "sessionId": "5f12ddd4-09a7-451c-8291-1b0ed3146aa2",
+  "sdkSessionId": "5f12ddd4-09a7-451c-8291-1b0ed3146aa2",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 97135,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 97135,
+    "percentage": 49
+  }
+}

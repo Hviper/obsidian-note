@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"start001","type":"text","text":"# 用户启动\n\n**需求**: \"我想为应用添加用户登录认证功能\"\n\n↓ 自动触发 brainstorming","x":0,"y":-380,"width":250,"height":100},
+		{"id":"brainstorm001","type":"text","text":"# 阶段1: Brainstorming\n\n**角色**: 需求探索与设计\n\n**自动执行**:\n- 探索项目上下文\n- 询问澄清问题\n- 提出设计方案\n- 编写设计文档\n- Spec审查循环\n\n**产出**:\n- docs/superpowers/specs/\n  <date>-<name>-design.md","x":320,"y":-280,"width":280,"height":220},
+		{"id":"core001","type":"text","text":"# 核心设计理念\n\n**托管式工作流**:\n- 用户只在关键节点决策\n- Skills自动编排细节\n\n**强制最佳实践**:\n- TDD / 验证 / 调试\n- 双重审查机制\n\n**隔离与上下文**:\n- 工作树隔离\n- 子代理隔离","x":-30,"y":720,"width":280,"height":220},
+		{"id":"support001","type":"text","text":"# 支持性 Skills\n\n| Skill | 作用 |\n|-------|------|\n| using-git-worktrees | 创建隔离环境 |\n| test-driven-development | TDD流程 |\n| systematic-debugging | 调试流程 |\n| verification-before-completion | 完成验证 |","x":-30,"y":400,"width":280,"height":200},
+		{"id":"decision1","type":"text","text":"# 决策点 #1\n\n**技术方案选择**\n\nA. JWT Token (推荐)\nB. Session Cookie\nC. OAuth 2.0","x":320,"y":400,"width":200,"height":120,"color":"3"},
+		{"id":"decision2","type":"text","text":"# 决策点 #2\n\n**设计方案确认**\n\n批准推荐的架构方案","x":620,"y":400,"width":180,"height":120,"color":"3"},
+		{"id":"decision3","type":"text","text":"# 决策点 #3\n\n**审查设计文档**\n\nGate: 批准后进入计划阶段","x":930,"y":400,"width":180,"height":120,"color":"3"},
+		{"id":"subagent001","type":"text","text":"# 阶段3A: Subagent-Driven\n\n**角色**: 并行任务执行\n\n**每个任务自动循环**:\n1. Agent: implementer (实施)\n2. Agent: spec-reviewer (合规)\n3. Agent: code-quality-reviewer (质量)\n\n**失败自动循环修复**","x":1080,"y":680,"width":260,"height":200},
+		{"id":"writingplans001","type":"text","text":"# 阶段2: Writing-Plans\n\n**角色**: 制定实施计划\n\n**自动执行**:\n- 分解任务 (bite-sized)\n- 编写计划文档\n- 计划审查循环\n\n**产出**:\n- docs/superpowers/plans/\n  <date>-<name>-plan.md","x":830,"y":-60,"width":280,"height":200},
+		{"id":"decision4","type":"text","text":"# 决策点 #4\n\n**选择执行方式**\n\n1. Subagent-Driven (推荐)\n2. Inline Execution","x":1140,"y":-490,"width":200,"height":140,"color":"3"},
+		{"id":"finishing001","type":"text","text":"# 阶段4: Finishing Branch\n\n**角色**: 完成开发分支\n\n**自动执行**:\n- 验证测试通过\n- 执行用户选择的完成方式\n- 清理工作树","x":1640,"y":140,"width":260,"height":160},
+		{"id":"inline001","type":"text","text":"# 阶段3B: Inline\n\n**角色**: 批量顺序执行\n\n**特点**:\n- 同一会话顺序执行\n- 无子代理调度开销\n- 适合任务耦合度高","x":1530,"y":600,"width":240,"height":160},
+		{"id":"decision5","type":"text","text":"# 决策点 #5\n\n**选择完成方式**\n\n1. 合并到main\n2. 创建PR\n3. 保持分支\n4. 放弃工作","x":1670,"y":-200,"width":200,"height":140,"color":"3"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"start001","fromSide":"right","toNode":"brainstorm001","toSide":"left"},
+		{"id":"e2","fromNode":"brainstorm001","fromSide":"bottom","toNode":"decision1","toSide":"top"},
+		{"id":"e3","fromNode":"decision1","fromSide":"right","toNode":"decision2","toSide":"left"},
+		{"id":"e4","fromNode":"decision2","fromSide":"right","toNode":"decision3","toSide":"left"},
+		{"id":"e5","fromNode":"decision3","fromSide":"top","toNode":"writingplans001","toSide":"bottom","label":"批准文档"},
+		{"id":"e6","fromNode":"brainstorm001","fromSide":"right","toNode":"writingplans001","toSide":"left","label":"REQUIRED"},
+		{"id":"e7","fromNode":"writingplans001","fromSide":"right","toNode":"decision4","toSide":"left"},
+		{"id":"e8","fromNode":"decision4","fromSide":"bottom","toNode":"subagent001","toSide":"top","label":"选择A"},
+		{"id":"e9","fromNode":"decision4","fromSide":"right","toNode":"inline001","toSide":"left","label":"选择B"},
+		{"id":"e10","fromNode":"subagent001","fromSide":"right","toNode":"finishing001","toSide":"left","label":"REQUIRED"},
+		{"id":"e11","fromNode":"inline001","fromSide":"top","toNode":"finishing001","toSide":"bottom","label":"REQUIRED"},
+		{"id":"e12","fromNode":"finishing001","fromSide":"top","toNode":"decision5","toSide":"bottom"}
+	]
+}

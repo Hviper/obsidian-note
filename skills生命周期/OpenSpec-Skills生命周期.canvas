@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"explore001","type":"text","x":0,"y":0,"width":280,"height":180,"text":"# Explore 探索阶段\n\n**角色**: 思考伙伴\n\n**核心职责**:\n- 深度对话，澄清需求\n- 可视化想法（ASCII 图表）\n- 探索代码库，发现模式\n- 比较不同方案\n\n**关键特点**:\n✓ 无固定流程 - 对话式探索\n✓ 不强制产出\n✓ 可视化优先\n✗ 不写代码 - 铁律"},
+		{"id":"propose001","type":"text","x":350,"y":0,"width":280,"height":180,"text":"# Propose 提案阶段\n\n**角色**: 工件生成器\n\n**核心职责**:\n- 创建 change 目录结构\n- 生成所有必要工件\n- 遵循 schema 工作流\n- 生成可执行任务清单\n\n**产出**:\n- proposal.md (what & why)\n- design.md (how)\n- tasks.md (steps)"},
+		{"id":"apply001","type":"text","x":700,"y":0,"width":280,"height":180,"text":"# Apply 实施阶段\n\n**角色**: 任务执行器\n\n**核心职责**:\n- 读取 tasks.md 任务清单\n- 按顺序实现每个任务\n- 更新任务完成状态\n- 处理实施中的问题\n\n**关键设计**:\n✓ 可随时调用\n✓ 允许工件更新\n✓ 支持暂停/恢复\n✓ 非阶段锁定"},
+		{"id":"archive001","type":"text","x":1050,"y":0,"width":280,"height":180,"text":"# Archive 归档阶段\n\n**角色**: 变更终结者\n\n**核心职责**:\n- 检查工件和任务完整性\n- 可选：同步 delta specs\n- 移动 change 到 archive\n- 生成归档摘要\n\n**输出**:\n- archive/YYYY-MM-DD-<name>/\n- 同步到 main specs (可选)"},
+		{"id":"idea001","type":"text","x":0,"y":-120,"width":240,"height":80,"text":"# 用户想法\n\n\"我想添加登录功能\""},
+		{"id":"design001","type":"text","x":1050,"y":-120,"width":280,"height":100,"text":"# 核心设计原则\n\n1. **用户是驾驶员** - AI 是工具\n2. **流体工作流** - 允许回退/跳跃\n3. **工件驱动** - 状态在文件中\n4. **Schema 可扩展** - 自定义工作流"},
+		{"id":"vs001","type":"text","x":350,"y":250,"width":280,"height":200,"text":"# OpenSpec vs Superpowers\n\n**OpenSpec**: 用户主导\n- 用户是驾驶员，AI 是工具\n- 显式调用，手动流转\n- 完全灵活，可跳过/回退\n- 文件系统驱动\n\n**Superpowers**: AI 托管\n- AI 是工程助手\n- 自动流转，REQUIRED SUB-SKILL\n- 结构化流程，5个关键决策点\n- 混合驱动 (文件 + 内存)"},
+		{"id":"schema001","type":"text","x":700,"y":250,"width":280,"height":200,"text":"# Schema 系统\n\n**工件依赖图**:\n\nproposal → specs\n       ↘       ↗\n        ↘     ↗\n         tasks → APPLY\n\n**核心文件**:\n- .openspec.yaml (schema定义)\n- proposal.md (范围)\n- design.md (方案)\n- tasks.md (任务+进度)"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"idea001","fromSide":"bottom","toNode":"explore001","toSide":"top"},
+		{"id":"e2","fromNode":"explore001","fromSide":"right","toNode":"propose001","toSide":"left","label":"用户: \"创建提案吧\""},
+		{"id":"e3","fromNode":"propose001","fromSide":"right","toNode":"apply001","toSide":"left","label":"用户: \"开始实现\""},
+		{"id":"e4","fromNode":"apply001","fromSide":"right","toNode":"archive001","toSide":"left","label":"用户: \"归档吧\""},
+		{"id":"e5","fromNode":"archive001","fromSide":"top","toNode":"design001","toSide":"bottom"}
+	]
+}
